@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Drums808" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,501 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeO-4d-Qqr">
+                                <rect key="frame" x="28" y="124" width="30" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="handleTimer:" destination="BYZ-38-t0r" eventType="touchDown" id="ziG-3I-Ayt"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6IQ-DZ-8Qd">
+                                <rect key="frame" x="28" y="174" width="320" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKT-h5-oTd">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="0ee-mh-XIO"/>
+                                            <constraint firstAttribute="height" constant="100" id="ODt-Ma-1RX"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="triggerSample:" destination="BYZ-38-t0r" eventType="touchDown" id="yhj-Ot-U3a"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZt-Np-XTJ">
+                                        <rect key="frame" x="110" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="ZEh-zb-KtH"/>
+                                            <constraint firstAttribute="width" constant="100" id="zFt-jk-48S"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="triggerSample:" destination="BYZ-38-t0r" eventType="touchDown" id="K5i-es-R24"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Zy-cb-3pB">
+                                        <rect key="frame" x="220" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="jAO-Br-VJ9"/>
+                                            <constraint firstAttribute="height" constant="100" id="vfw-Lo-sYS"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="triggerSample:" destination="BYZ-38-t0r" eventType="touchDown" id="CmN-IN-4dE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VE9-Oe-GtS">
+                                <rect key="frame" x="28" y="284" width="320" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQS-GF-fnH">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="QRa-6K-ni6"/>
+                                            <constraint firstAttribute="width" constant="100" id="Rv9-E9-SZI"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="triggerSample:" destination="BYZ-38-t0r" eventType="touchDown" id="hN4-kL-gb5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obX-dz-6zZ">
+                                        <rect key="frame" x="110" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Y8n-Jl-aNV"/>
+                                            <constraint firstAttribute="height" constant="100" id="vjH-KR-X2C"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="triggerSample:" destination="BYZ-38-t0r" eventType="touchDown" id="oGp-K4-dfk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZJ-T4-p8v">
+                                        <rect key="frame" x="220" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="753-hi-S3h"/>
+                                            <constraint firstAttribute="width" constant="100" id="gmr-CW-AtC"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="triggerSample:" destination="BYZ-38-t0r" eventType="touchDown" id="v3T-je-22K"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ft5-f2-HTh">
+                                <rect key="frame" x="28" y="394" width="320" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdu-MD-TFA">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="QvC-su-PcB"/>
+                                            <constraint firstAttribute="width" constant="100" id="htf-PC-G9m"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="triggerSample:" destination="BYZ-38-t0r" eventType="touchDown" id="YhT-br-45x"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqH-Tt-z3P">
+                                        <rect key="frame" x="110" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="IGn-Be-pfd"/>
+                                            <constraint firstAttribute="height" constant="100" id="nVs-2y-bZW"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="triggerSample:" destination="BYZ-38-t0r" eventType="touchDown" id="MMg-gS-qEq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8H-n8-Kjn">
+                                        <rect key="frame" x="220" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="N1a-Gg-ohj"/>
+                                            <constraint firstAttribute="width" constant="100" id="dNL-Oc-dwl"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="triggerSample:" destination="BYZ-38-t0r" eventType="touchDown" id="jrT-Da-VNE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="808" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVG-sH-fhR">
+                                <rect key="frame" x="155.5" y="41" width="66.5" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4Iv-ql-kcZ">
+                                <rect key="frame" x="30" y="539" width="315" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPF-ia-f30">
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="7aG-24-vH1"/>
+                                            <constraint firstAttribute="height" constant="35" id="zuV-nE-7pM"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="sEa-is-O9m"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkp-jr-lYy">
+                                        <rect key="frame" x="40" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="TDB-G2-K6O"/>
+                                            <constraint firstAttribute="height" constant="35" id="yby-YJ-QI3"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="M5d-4u-w3a"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hX-4h-YOp">
+                                        <rect key="frame" x="80" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="IWT-ph-Bva"/>
+                                            <constraint firstAttribute="height" constant="35" id="NlH-TA-etG"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="4tN-6P-kxT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Luv-NA-feT">
+                                        <rect key="frame" x="120" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="7yZ-W6-e1n"/>
+                                            <constraint firstAttribute="height" constant="35" id="EeV-vz-jph"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="4fd-yV-ABR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9h-Qd-bUe">
+                                        <rect key="frame" x="160" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="Q0z-16-LPa"/>
+                                            <constraint firstAttribute="height" constant="35" id="sa8-lz-otU"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="tLt-VG-L1g"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwH-HP-g4y">
+                                        <rect key="frame" x="200" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="5hQ-o7-HQT"/>
+                                            <constraint firstAttribute="width" constant="35" id="OyC-TZ-iym"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="xSW-JM-G6l"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr7-Ou-UvR">
+                                        <rect key="frame" x="240" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="5C4-aC-ll0"/>
+                                            <constraint firstAttribute="height" constant="35" id="KWd-UZ-lXX"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="gme-q3-Wm8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVm-C5-Uk9">
+                                        <rect key="frame" x="280" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="Exe-cu-ANz"/>
+                                            <constraint firstAttribute="height" constant="35" id="WLL-LL-Mih"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="lh5-YQ-aGZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="60" maxValue="180" translatesAutoresizingMaskIntoConstraints="NO" id="1eb-Fz-Txj">
+                                <rect key="frame" x="86" y="124" width="204" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8tA-HD-xTY"/>
+                                    <constraint firstAttribute="width" constant="200" id="rm4-Lp-ujm"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeTempo:" destination="BYZ-38-t0r" eventType="valueChanged" id="1B1-Ku-kZX"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempo (bpm)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iog-KM-DgK">
+                                <rect key="frame" x="88" y="97.5" width="108.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmx-ay-DqL">
+                                <rect key="frame" x="304" y="132.5" width="44" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wuI-cg-5EG">
+                                <rect key="frame" x="62" y="594" width="250" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="C9c-V0-M7H"/>
+                                    <constraint firstAttribute="height" constant="30" id="zXB-EA-NFE"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Kick"/>
+                                    <segment title="Snare"/>
+                                    <segment title="Hi Hat"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sequenceSelect:" destination="BYZ-38-t0r" eventType="valueChanged" id="k4W-4I-z2u"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WUj-x5-wiP">
+                                <rect key="frame" x="30" y="499" width="315" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2Q-hY-VGp">
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="YhR-Lo-B7F"/>
+                                            <constraint firstAttribute="width" constant="35" id="trL-oc-WjF"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="1qm-Pe-024"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmO-GS-xW2">
+                                        <rect key="frame" x="40" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="dhE-jo-LWv"/>
+                                            <constraint firstAttribute="height" constant="35" id="fP3-1Z-HtV"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="O2x-VG-9Rm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4i-WL-aMu">
+                                        <rect key="frame" x="80" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="1jt-Gd-o0b"/>
+                                            <constraint firstAttribute="width" constant="35" id="fuQ-YL-W4n"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="MuT-dp-cRT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOU-gd-1EN">
+                                        <rect key="frame" x="120" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="7gM-Ky-5mD"/>
+                                            <constraint firstAttribute="width" constant="35" id="m7O-zU-sL2"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="GmS-SF-yQn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4b-Os-Pal">
+                                        <rect key="frame" x="160" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="hIg-zN-dmN"/>
+                                            <constraint firstAttribute="height" constant="35" id="pCO-Xt-FYJ"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="HXm-YS-3NN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQw-ik-rJA">
+                                        <rect key="frame" x="200" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="4Yk-Mw-Q5z"/>
+                                            <constraint firstAttribute="width" constant="35" id="N5y-2T-LcK"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="5yx-LW-LnF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbI-WZ-ttN">
+                                        <rect key="frame" x="240" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="c3U-5S-8gP"/>
+                                            <constraint firstAttribute="height" constant="35" id="npS-Mu-QjA"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="oVu-jt-Hs6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tS3-gh-tpf">
+                                        <rect key="frame" x="280" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="ORy-Bc-wiR"/>
+                                            <constraint firstAttribute="width" constant="35" id="VsK-4d-prW"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="ops-Iz-PQL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WUj-x5-wiP" firstAttribute="centerX" secondItem="ft5-f2-HTh" secondAttribute="centerX" id="0fG-pI-rNb"/>
+                            <constraint firstItem="Pmx-ay-DqL" firstAttribute="trailing" secondItem="6IQ-DZ-8Qd" secondAttribute="trailing" id="3Qk-ze-t72"/>
+                            <constraint firstItem="WUj-x5-wiP" firstAttribute="top" secondItem="ft5-f2-HTh" secondAttribute="bottom" constant="5" id="4vv-79-mHE"/>
+                            <constraint firstItem="1eb-Fz-Txj" firstAttribute="top" secondItem="pVG-sH-fhR" secondAttribute="bottom" constant="40" id="5fv-cL-m4o"/>
+                            <constraint firstItem="4Iv-ql-kcZ" firstAttribute="centerX" secondItem="ft5-f2-HTh" secondAttribute="centerX" id="ASC-yx-3AS"/>
+                            <constraint firstItem="wuI-cg-5EG" firstAttribute="centerX" secondItem="4Iv-ql-kcZ" secondAttribute="centerX" id="EAY-sR-6fj"/>
+                            <constraint firstItem="6IQ-DZ-8Qd" firstAttribute="leading" secondItem="yeO-4d-Qqr" secondAttribute="leading" id="KnT-6A-qrd"/>
+                            <constraint firstItem="VE9-Oe-GtS" firstAttribute="centerX" secondItem="6IQ-DZ-8Qd" secondAttribute="centerX" id="M6t-s5-kCF"/>
+                            <constraint firstItem="ft5-f2-HTh" firstAttribute="top" secondItem="VE9-Oe-GtS" secondAttribute="bottom" constant="10" id="QHC-cb-gdB"/>
+                            <constraint firstItem="pVG-sH-fhR" firstAttribute="centerX" secondItem="1eb-Fz-Txj" secondAttribute="centerX" id="RRn-fc-W7y"/>
+                            <constraint firstItem="6IQ-DZ-8Qd" firstAttribute="top" secondItem="yeO-4d-Qqr" secondAttribute="bottom" constant="20" id="Yc4-6Q-RYk"/>
+                            <constraint firstItem="VE9-Oe-GtS" firstAttribute="top" secondItem="6IQ-DZ-8Qd" secondAttribute="bottom" constant="10" id="Yv5-ja-Qje"/>
+                            <constraint firstItem="1eb-Fz-Txj" firstAttribute="top" secondItem="Iog-KM-DgK" secondAttribute="bottom" constant="5" id="aCv-fn-Dh0"/>
+                            <constraint firstItem="VE9-Oe-GtS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fjV-dW-a31"/>
+                            <constraint firstItem="6IQ-DZ-8Qd" firstAttribute="top" secondItem="Pmx-ay-DqL" secondAttribute="bottom" constant="20" id="qMy-OP-qAL"/>
+                            <constraint firstItem="6IQ-DZ-8Qd" firstAttribute="top" secondItem="1eb-Fz-Txj" secondAttribute="bottom" constant="20" id="rcW-eG-zKK"/>
+                            <constraint firstItem="ft5-f2-HTh" firstAttribute="centerX" secondItem="6IQ-DZ-8Qd" secondAttribute="centerX" id="szY-Yz-tyr"/>
+                            <constraint firstItem="4Iv-ql-kcZ" firstAttribute="top" secondItem="WUj-x5-wiP" secondAttribute="bottom" constant="5" id="u4i-3a-3Xs"/>
+                            <constraint firstItem="wuI-cg-5EG" firstAttribute="top" secondItem="4Iv-ql-kcZ" secondAttribute="bottom" constant="20" id="u7O-Zp-sAB"/>
+                            <constraint firstItem="4Iv-ql-kcZ" firstAttribute="centerX" secondItem="WUj-x5-wiP" secondAttribute="centerX" id="uoV-vc-sev"/>
+                            <constraint firstItem="1eb-Fz-Txj" firstAttribute="leading" secondItem="Iog-KM-DgK" secondAttribute="leading" id="vFc-NT-aYs"/>
+                            <constraint firstItem="1eb-Fz-Txj" firstAttribute="centerX" secondItem="6IQ-DZ-8Qd" secondAttribute="centerX" id="wEa-mh-0aw"/>
+                            <constraint firstItem="6IQ-DZ-8Qd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zjY-mA-CLi"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="clapPad" destination="DQS-GF-fnH" id="Syl-lX-kjX"/>
+                        <outlet property="closedHatPad" destination="obX-dz-6zZ" id="1BF-nv-lks"/>
+                        <outlet property="hiTomPad" destination="mKT-h5-oTd" id="Is5-AM-JIb"/>
+                        <outlet property="kickPad" destination="vdu-MD-TFA" id="3Qh-Fe-7hc"/>
+                        <outlet property="loTomPad" destination="3Zy-cb-3pB" id="xGm-mS-MMM"/>
+                        <outlet property="midTomPad" destination="aZt-Np-XTJ" id="uRk-Fj-r3h"/>
+                        <outlet property="openHatPad" destination="GZJ-T4-p8v" id="bjQ-C7-R4a"/>
+                        <outlet property="playButton" destination="yeO-4d-Qqr" id="ccm-oy-fXD"/>
+                        <outlet property="rimShotPad" destination="dqH-Tt-z3P" id="V6U-cD-Lbw"/>
+                        <outlet property="seqEight" destination="q9h-Qd-bUe" id="1bl-NA-fHC"/>
+                        <outlet property="seqEleven" destination="HQw-ik-rJA" id="3Mb-rB-iQp"/>
+                        <outlet property="seqFifteen" destination="tS3-gh-tpf" id="Rrq-F6-lcJ"/>
+                        <outlet property="seqFive" destination="G4i-WL-aMu" id="uYU-Ue-IlN"/>
+                        <outlet property="seqFour" destination="0hX-4h-YOp" id="GHZ-ny-PfZ"/>
+                        <outlet property="seqFourteen" destination="FVm-C5-Uk9" id="O8M-Xr-06A"/>
+                        <outlet property="seqNine" destination="v4b-Os-Pal" id="IYg-gd-cna"/>
+                        <outlet property="seqOne" destination="C2Q-hY-VGp" id="81k-mX-gZf"/>
+                        <outlet property="seqSeven" destination="sOU-gd-1EN" id="lms-6g-CJI"/>
+                        <outlet property="seqSix" destination="Luv-NA-feT" id="QS9-eO-FEL"/>
+                        <outlet property="seqTen" destination="QwH-HP-g4y" id="pBq-kc-rFB"/>
+                        <outlet property="seqThirteen" destination="RbI-WZ-ttN" id="zTO-LO-xye"/>
+                        <outlet property="seqThree" destination="pmO-GS-xW2" id="PK3-eT-7Rw"/>
+                        <outlet property="seqTwelve" destination="kr7-Ou-UvR" id="rOM-Qm-1yz"/>
+                        <outlet property="seqTwo" destination="jkp-jr-lYy" id="Wwp-KQ-AFb"/>
+                        <outlet property="seqZero" destination="gPF-ia-f30" id="wes-9J-pO7"/>
+                        <outlet property="sequenceSelector" destination="wuI-cg-5EG" id="Pi5-8E-SRw"/>
+                        <outlet property="snarePad" destination="y8H-n8-Kjn" id="e3p-9E-dZ6"/>
+                        <outlet property="tempoLabel" destination="Pmx-ay-DqL" id="cik-Qq-ScS"/>
+                        <outlet property="tempoSlider" destination="1eb-Fz-Txj" id="r02-Eg-IDy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="29.600000000000001" y="35.532233883058474"/>
         </scene>
     </scenes>
 </document>
