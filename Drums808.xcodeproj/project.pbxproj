@@ -45,8 +45,6 @@
 		7CC98AA11EE8C134003163EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CC98AA41EE8C134003163EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CC98AA61EE8C134003163EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7CC98AAD1EE8C1DF003163EA /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = "../../Xcode Projects/AudioKit-iOS/AudioKit.framework"; sourceTree = "<group>"; };
-		7CC98AB71EE8C25A003163EA /* AudioKit.docset */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AudioKit.docset; path = "../../Xcode Projects/AudioKit-iOS/AudioKit.docset"; sourceTree = "<group>"; };
 		7CC98AC01EE8C32A003163EA /* samplerEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = samplerEngine.swift; sourceTree = "<group>"; };
 		7CC98AC31EE8C4F2003163EA /* bd7575.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bd7575.wav; sourceTree = "<group>"; };
 		7CC98AC41EE8C4F2003163EA /* ch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ch.wav; sourceTree = "<group>"; };
@@ -75,7 +73,6 @@
 			children = (
 				7CC98A991EE8C134003163EA /* Drums808 */,
 				7CC98A981EE8C134003163EA /* Products */,
-				7CC98AAC1EE8C1DF003163EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,15 +97,6 @@
 				7CC98AA61EE8C134003163EA /* Info.plist */,
 			);
 			path = Drums808;
-			sourceTree = "<group>";
-		};
-		7CC98AAC1EE8C1DF003163EA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7CC98AB71EE8C25A003163EA /* AudioKit.docset */,
-				7CC98AAD1EE8C1DF003163EA /* AudioKit.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7CC98AC21EE8C4F2003163EA /* Drum Samples */ = {
@@ -386,6 +374,7 @@
 				7CC98AAB1EE8C134003163EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
