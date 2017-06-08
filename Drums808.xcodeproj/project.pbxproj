@@ -22,8 +22,6 @@
 		7CC98AD21EE8C4F2003163EA /* oh75.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7CC98AC91EE8C4F2003163EA /* oh75.wav */; };
 		7CC98AD31EE8C4F2003163EA /* rs.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7CC98ACA1EE8C4F2003163EA /* rs.wav */; };
 		7CC98AD41EE8C4F2003163EA /* sd7575.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7CC98ACB1EE8C4F2003163EA /* sd7575.wav */; };
-		7CC98AE01EE8CA4E003163EA /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC98ADF1EE8CA4E003163EA /* AudioKit.framework */; };
-		7CC98AE11EE8CA4E003163EA /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC98ADF1EE8CA4E003163EA /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,7 +31,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7CC98AE11EE8CA4E003163EA /* AudioKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,7 +57,6 @@
 		7CC98AC91EE8C4F2003163EA /* oh75.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = oh75.wav; sourceTree = "<group>"; };
 		7CC98ACA1EE8C4F2003163EA /* rs.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rs.wav; sourceTree = "<group>"; };
 		7CC98ACB1EE8C4F2003163EA /* sd7575.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sd7575.wav; sourceTree = "<group>"; };
-		7CC98ADF1EE8CA4E003163EA /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CC98AE01EE8CA4E003163EA /* AudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +73,6 @@
 		7CC98A8E1EE8C134003163EA = {
 			isa = PBXGroup;
 			children = (
-				7CC98ADF1EE8CA4E003163EA /* AudioKit.framework */,
 				7CC98A991EE8C134003163EA /* Drums808 */,
 				7CC98A981EE8C134003163EA /* Products */,
 				7CC98AAC1EE8C1DF003163EA /* Frameworks */,
