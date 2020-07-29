@@ -123,7 +123,7 @@ class ViewController: UIViewController {
     var stepCounter = 0 //Variable used to index sequencer step position
     
     //Function to play sequence and illuminate sequencer step buttons to indicate current position
-    func stepSequence(){
+    @objc func stepSequence(){
         
         //Play the information in the current sequence step
         samplerEngine.playStep()
