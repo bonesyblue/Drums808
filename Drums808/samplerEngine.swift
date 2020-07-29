@@ -12,6 +12,10 @@
 import Foundation
 import AudioKit
 
+enum SamplerEngineError: Error {
+    case soundfilesNotFound
+}
+
 open class SamplerEngine {
     
     //MARK: Sampler Engine class variables
@@ -19,15 +23,15 @@ open class SamplerEngine {
         case fileNotFound(String)
     }
     //Sampler instruments
-    var kick: AKSampler!
-    var rim: AKSampler!
-    var snare: AKSampler!
-    var clap: AKSampler!
-    var closedHiHat: AKSampler!
-    var openHiHat: AKSampler!
-    var hiTom: AKSampler!
-    var midTom: AKSampler!
-    var loTom: AKSampler!
+    var kick: AKAudioPlayer!
+    var rim: AKAudioPlayer!
+    var snare: AKAudioPlayer!
+    var clap: AKAudioPlayer!
+    var closedHiHat: AKAudioPlayer!
+    var openHiHat: AKAudioPlayer!
+    var hiTom: AKAudioPlayer!
+    var midTom: AKAudioPlayer!
+    var loTom: AKAudioPlayer!
     
     //Mixer for mixing together sampler instruments
     var mixer: AKMixer!
@@ -37,37 +41,35 @@ open class SamplerEngine {
     
     //MARK: Init method
     //Method run upon instantiation of Sampler Engine class
-    init () {
+    init () throws {
         
-        //Initialise the samplers which correspond to each of the drum pads on the 3x3 grid
-        kick = AKSampler()
-        rim = AKSampler()
-        snare = AKSampler()
-        clap = AKSampler()
-        closedHiHat = AKSampler()
-        openHiHat = AKSampler()
-        hiTom = AKSampler()
-        midTom = AKSampler()
-        loTom = AKSampler()
+        //Initialise the audio player instances which correspond to each of the drum pads on the 3x3 grid
+        guard let kickSoundFile = try? AKAudioFile(readFileName: "bd7575.wav"),
+            let rimSoundFile = try? AKAudioFile(readFileName: "rs.wav"),
+            let snareSoundFile = try? AKAudioFile(readFileName: "sd7575.wav"),
+            let clapSoundFile = try? AKAudioFile(readFileName: "cp.wav"),
+            let closedHiHatSoundFile = try? AKAudioFile(readFileName: "ch.wav"),
+            let openHiHatSoundFile = try? AKAudioFile(readFileName: "oh75.wav"),
+            let hiTomSoundFile = try? AKAudioFile(readFileName: "ht75.wav"),
+            let midTomSoundFile = try? AKAudioFile(readFileName: "mt75.wav"),
+            let loTomSoundFile = try? AKAudioFile(readFileName: "lt75.wav") else {
+                throw SamplerEngineError.soundfilesNotFound
+        }
         
-        //Load the wav files into the respective samplers
+        //Load the audio files into the respective player instances
         //N.B. Wav files aren't allowed to have capitals!
         do {
-            try kick.loadAKAudioFile(
-                from: AKSampleDescriptor(),
-                file: AKAudioFile(readFileName: "bd7575")
-            )
-            try rim.loadWav("rs")
-            try snare.loadWav("sd7575")
-            try clap.loadWav("cp")
-            try closedHiHat.loadWav("ch")
-            try openHiHat.loadWav("oh75")
-            try hiTom.loadWav("ht75")
-            try midTom.loadWav("mt75")
-            try loTom.loadWav("lt75")
-        }
-        catch let error {
-            print(error)
+            kick = try AKAudioPlayer(file: kickSoundFile)
+            rim = try AKAudioPlayer(file: rimSoundFile)
+            snare = try AKAudioPlayer(file: snareSoundFile)
+            clap = try AKAudioPlayer(file: clapSoundFile)
+            closedHiHat = try AKAudioPlayer(file: closedHiHatSoundFile)
+            openHiHat = try AKAudioPlayer(file: openHiHatSoundFile)
+            hiTom = try AKAudioPlayer(file: hiTomSoundFile)
+            midTom = try AKAudioPlayer(file: midTomSoundFile)
+            loTom = try AKAudioPlayer(file: loTomSoundFile)
+        } catch let error {
+            debugPrint(error)
         }
         
         
@@ -78,7 +80,7 @@ open class SamplerEngine {
         AudioKit.output = mixer
         
         //Start the audio engine
-        AudioKit.start()
+        try? AudioKit.start()
         
         //Initialise the selected sequence to the kick drum (see the segmented control in the main storyboard)
         selectedSequence = 0
