@@ -13,7 +13,7 @@
 		7CC98AA01EE8C134003163EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC98A9E1EE8C134003163EA /* Main.storyboard */; };
 		7CC98AA21EE8C134003163EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CC98AA11EE8C134003163EA /* Assets.xcassets */; };
 		7CC98AA51EE8C134003163EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC98AA31EE8C134003163EA /* LaunchScreen.storyboard */; };
-		7CC98AC11EE8C32A003163EA /* samplerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC98AC01EE8C32A003163EA /* samplerEngine.swift */; };
+		7CC98AC11EE8C32A003163EA /* SequencerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC98AC01EE8C32A003163EA /* SequencerEngine.swift */; };
 		7CC98ACC1EE8C4F2003163EA /* bd7575.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7CC98AC31EE8C4F2003163EA /* bd7575.wav */; };
 		7CC98ACD1EE8C4F2003163EA /* ch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7CC98AC41EE8C4F2003163EA /* ch.wav */; };
 		7CC98ACE1EE8C4F2003163EA /* cp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7CC98AC51EE8C4F2003163EA /* cp.wav */; };
@@ -49,7 +49,7 @@
 		7CC98AA11EE8C134003163EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CC98AA41EE8C134003163EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CC98AA61EE8C134003163EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7CC98AC01EE8C32A003163EA /* samplerEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = samplerEngine.swift; sourceTree = "<group>"; };
+		7CC98AC01EE8C32A003163EA /* SequencerEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequencerEngine.swift; sourceTree = "<group>"; };
 		7CC98AC31EE8C4F2003163EA /* bd7575.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bd7575.wav; sourceTree = "<group>"; };
 		7CC98AC41EE8C4F2003163EA /* ch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ch.wav; sourceTree = "<group>"; };
 		7CC98AC51EE8C4F2003163EA /* cp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cp.wav; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 				7CC98AC21EE8C4F2003163EA /* Drum Samples */,
 				7CC98A9A1EE8C134003163EA /* AppDelegate.swift */,
 				7CC98A9C1EE8C134003163EA /* ViewController.swift */,
-				7CC98AC01EE8C32A003163EA /* samplerEngine.swift */,
+				7CC98AC01EE8C32A003163EA /* SequencerEngine.swift */,
 				7CC98A9E1EE8C134003163EA /* Main.storyboard */,
 				7CC98AA11EE8C134003163EA /* Assets.xcassets */,
 				7CC98AA31EE8C134003163EA /* LaunchScreen.storyboard */,
@@ -249,7 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CC98AC11EE8C32A003163EA /* samplerEngine.swift in Sources */,
+				7CC98AC11EE8C32A003163EA /* SequencerEngine.swift in Sources */,
 				7CC98A9D1EE8C134003163EA /* ViewController.swift in Sources */,
 				7CC98A9B1EE8C134003163EA /* AppDelegate.swift in Sources */,
 			);
