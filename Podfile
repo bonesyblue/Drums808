@@ -6,6 +6,6 @@ target 'Drums808' do
   use_frameworks!
 
   # Pods for Drums808
-  pod 'AudioKit', '~> 4.5.0'
+  pod 'AudioKit/Core', '~> 4.10.1'
 
 end
