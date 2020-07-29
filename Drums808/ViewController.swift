@@ -13,7 +13,7 @@ import UIKit
 import AudioKit
 
 //Declare the sampler engine variable for instantiating the sampler engine class
-var samplerEngine: SamplerEngine!
+var globalSamplerEngine: SamplerEngine!
 
 class ViewController: UIViewController {
     
@@ -65,7 +65,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //Run the init() function of the SamplerEngine class
-        samplerEngine = SamplerEngine()
+        if let samplerEngine = try? SamplerEngine() {
+            globalSamplerEngine = samplerEngine
+        }
+        
         
         //Instantiate a timer for sequencing tasks
         sequenceTimer = Timer()
@@ -87,7 +90,7 @@ class ViewController: UIViewController {
     @IBAction func triggerSample(_ sender: UIButton) {
         
         //When a drum trigger pad is pressed, play the associated sample
-        samplerEngine.playSample(sender.tag)
+        globalSamplerEngine.playSample(sender.tag)
     }
     
     //MARK: Sequencer Functions
@@ -102,7 +105,7 @@ class ViewController: UIViewController {
             startButtonSelected = false //Set start button toggle to false
             
             //Calculate timing interval based on value of the tempo slider
-            let interval = samplerEngine.getInterval(tempo: tempoSlider.value)
+            let interval = globalSamplerEngine.getInterval(tempo: tempoSlider.value)
             
             //Create a timer that will repeat the begin sequence function every interval
             sequenceTimer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(stepSequence), userInfo: nil, repeats: true)
@@ -126,7 +129,7 @@ class ViewController: UIViewController {
     @objc func stepSequence(){
         
         //Play the information in the current sequence step
-        samplerEngine.playStep()
+        globalSamplerEngine.playStep()
         
         //For each step, highlight the sequencer play location
         switch stepCounter % 16 {
@@ -191,7 +194,7 @@ class ViewController: UIViewController {
     //Function to handle illumination of sequencer buttons
     @IBAction func buttonEnabled(_ sender: UIButton) {
         //When Determine using illuminate() function whether sequencer button is to be illuminated
-        if samplerEngine.illuminate(sequenceStepId: sender.tag) {
+        if globalSamplerEngine.illuminate(sequenceStepId: sender.tag) {
             //Highlight sequencer button green to play associated sample (on state)
             sender.backgroundColor = UIColor.green
         }
@@ -206,7 +209,7 @@ class ViewController: UIViewController {
     @IBAction func sequenceSelect(_ sender: UISegmentedControl) {
         
         //Update the selected sequencer variable in the sampler engine class with the selected sampler index
-        samplerEngine.selectedSequence = sequenceSelector.selectedSegmentIndex
+        globalSamplerEngine.selectedSequence = sequenceSelector.selectedSegmentIndex
         
         //Update the sequencer buttons to reflect the change in selected sampler instrument
         updateSequenceButtons(sequence: sequenceSelector.selectedSegmentIndex)
@@ -222,7 +225,7 @@ class ViewController: UIViewController {
             //Loop once through the kick drum sequence array
             for i in 0..<16 {
                 //Illuminate the respective sequence step for steps where the kick drum has been set to trigger
-                if samplerEngine.kickSequence[i]{
+                if globalSamplerEngine.kickSequence[i]{
                     seqButtonDict[i]!.backgroundColor = UIColor.green
                 }
                 //Otherwise set the sequence steps to grey
@@ -236,7 +239,7 @@ class ViewController: UIViewController {
             //Loop once through the snare drum sequence array
             for i in 0..<16 {
                 //Illuminate the respective sequence step for steps where the snare drum has been set to trigger
-                if samplerEngine.snareSequence[i]{
+                if globalSamplerEngine.snareSequence[i]{
                     seqButtonDict[i]!.backgroundColor = UIColor.green
                 }
                 //Otherwise set the sequence steps to grey
@@ -250,7 +253,7 @@ class ViewController: UIViewController {
             //Loop once through the hi hat drum sequence array
             for i in 0..<16 {
                 //Illuminate the respective sequence step for steps where the hi hat has been set to trigger
-                if samplerEngine.hiHatSequence[i]{
+                if globalSamplerEngine.hiHatSequence[i]{
                     seqButtonDict[i]!.backgroundColor = UIColor.green
                 }
                 //Otherwise set the sequence steps to grey
