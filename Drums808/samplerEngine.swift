@@ -53,7 +53,10 @@ open class SamplerEngine {
         //Load the wav files into the respective samplers
         //N.B. Wav files aren't allowed to have capitals!
         do {
-            try kick.loadWav("bd7575")
+            try kick.loadAKAudioFile(
+                from: AKSampleDescriptor(),
+                file: AKAudioFile(readFileName: "bd7575")
+            )
             try rim.loadWav("rs")
             try snare.loadWav("sd7575")
             try clap.loadWav("cp")
