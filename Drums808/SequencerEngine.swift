@@ -12,11 +12,12 @@
 import Foundation
 import AudioKit
 
-enum SamplerEngineError: Error {
+enum SequencerEngineError: Error {
     case soundfilesNotFound
 }
 
-open class SamplerEngine {
+// Class to control audio sample
+class SequencerEngine {
     
     //MARK: Sampler Engine class variables
     enum LoadingError: Error {
@@ -53,7 +54,7 @@ open class SamplerEngine {
             let hiTomSoundFile = try? AKAudioFile(readFileName: "ht75.wav"),
             let midTomSoundFile = try? AKAudioFile(readFileName: "mt75.wav"),
             let loTomSoundFile = try? AKAudioFile(readFileName: "lt75.wav") else {
-                throw SamplerEngineError.soundfilesNotFound
+                throw SequencerEngineError.soundfilesNotFound
         }
         
         //Load the audio files into the respective player instances
