@@ -6,8 +6,7 @@ I had an idea to make a drum sequencing app and what better than the legendary 8
 TR808 samples were sourced from http://smd-records.com/tr808/?page_id=14 [Accessed 18th October 2016]
 with many thanks to Michael Fischer of Technopolis for recording these samples and making them freely available
 
-Please feel free to send feedback, comments or suggestions to me at:
-j_b_93@hotmail.co.uk
+Please feel free to send feedback, comments or suggestions to me at: [bonesyblue@gmail.com](mailto:bonesyblue@gmail.com)
 
 Jonathan Bones
 
